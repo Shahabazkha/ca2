@@ -1,0 +1,59 @@
+{%extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %} 
+    <script>
+        $(document).ready(function(){
+            imageUrl = '/static/images/hb.png';
+            $('body').css('background-image', 'url(' + imageUrl + ')');
+        });
+        function getdata()
+        {
+            empid = $("#name").val();
+            $.post(
+                '/search',
+                'name='+empid,
+                function(response)
+                {
+                    $("#nam").text(response.name);
+                    $("#mobile").text(response.mobile);
+                    $("#email").text(response.email);
+                    $("#address").text(response.address);
+                    $("#jd").text(response.jd);
+                    $("#years").text(response.years);
+                    $("#degree").text(response.degree);
+                    $("#desig").text(response.desig);
+
+                }
+            );
+        }
+    </script>
+    <h1 class="text-center">Search Employee by Id</h1>
+    <input type="text" style="text-align: center;border: 6px solid gray;border-radius: 22px;" placeholder="Search by name " id="name" class="form-control">
+    <button type="submit" style="margin: auto;display: block;margin-top: 2%;width: 9%;" onclick="getdata()"><i class="fa fa-search"></i></button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Joining Date</th>
+            <th>Years of Experience</th>
+            <th>Degree</th>
+            <th>Designation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-danger">
+            <td id="nam"></td>
+            <td id="mobile"></td>
+            <td id="email"></td>
+            <td id="address"></td>
+            <td id="jd"></td>
+            <td id="years"></td>
+            <td id="degree"></td>
+            <td id="desig"></td>
+          </tr>
+        </tbody>
+      </table>
+{% endblock %}
