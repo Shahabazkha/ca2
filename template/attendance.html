@@ -1,0 +1,75 @@
+{%extends "layout.html" %}
+{% block title %}attendance{% endblock %}
+{% block content %} 
+<script>
+   $(document).ready(function(){
+    imageUrl = '/static/images/hb.png';
+    $('body').css('background-image', 'url(' + imageUrl + ')');
+  });
+   function emp_present(emp_id)
+   {
+   $.post(
+     '/presentemp',
+   'emp_id='+emp_id,
+     function(response)
+     {
+       if(response == '1')
+       {
+         alert("Attendance marked successfully");
+         $("#presentbtn"+emp_id).hide();
+         $("#absentbtn"+emp_id).hide();
+       }
+     }
+   );
+   }
+   function emp_absent(emp_id)
+   {
+   $.post(
+     '/absentemp',
+   'emp_id='+emp_id,
+     function(response)
+     {
+       if(response == '1')
+       {
+         alert("Attendance marked successfully");
+         $("#presentbtn"+emp_id).hide();
+         $("#absentbtn"+emp_id).hide();
+       }
+     }
+   );
+   }
+</script>
+<div class="container mt-3">
+<a class="btn btn-warning" style="margin-top: 3%;width: 12%;float:right;background: #fbceb5;border-color: #fbceb5;" href="{{url_for('logout')}}">Log out</a>
+<h2 class="text-center">Attendance</h2>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+   <tr>
+      <th>Sr. No.</th>
+      <th>Employee Name</th>
+      <th>Mobile</th>
+      <th>Years of Experience</th>
+      <th>Degree</th>
+      <th>Designation</th>
+      <th>Action</th>
+   </tr>
+</thead>
+<tbody>
+   {% for emp in empdata %}
+      <tr>
+          <td>{{loop.index}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.mobile}}</td>
+          <td>{{emp.years}}</td>
+          <td>{{emp.degree}}</td>
+          <td>{{emp.desig}}</td>
+          <td style="display:grid;">
+            {% if getusertodayatten(emp.id) == 2 %}
+                <button type="button" class="btn btn-success" onclick="emp_present({{emp.id}})" id="presentbtn{{emp.id}}" style="margin:2%;">Present</button>
+                <button type="button" class="btn btn-warning" onclick="emp_absent({{emp.id}})" id="absentbtn{{emp.id}}" style="margin:2%;">Absent</button>
+            {% endif %}
+          </td>
+      </tr>
+    {% endfor %}
+{% endblock %}
