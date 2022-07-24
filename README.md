@@ -31,11 +31,11 @@ Ajam Shaikh  (Student ID: 10612185)
 •	Made routes for seach employee, attendance, present.
 
 Vivek Gore  (Student ID: 10612192)
-•	Made present, absent in attendance.
-•	Made report generation.
-•	Made absent and delete employee.
-•	Added background images.
-•	Fetch search fetch data.
+•	Made present, absent in attendance table for employees and also added route for same in app.py file.
+•	Made report generation for employees.
+•	Made absent and delete employee functionality in app.py file.
+•	Implemented functions using flask framework and added template rendering for html pages.
+•	Fetch search data for employees and written function for same in app.py.
 
 All over challanges we have faced was connecting jquery and ajax implementation. Update employee information was very tough to update.
 
