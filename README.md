@@ -32,7 +32,7 @@ Ajam Shaikh  (Student ID: 10612185)
 .       Created html and css pages for add, update and delete employees.
 
 
-Vivek Gore  (Student ID: 10612192)
+Vivekanand Gore  (Student ID: 10612192)
 •	Made present, absent in attendance table for employees and also added route for same in app.py file.
 •	Made report generation for employees.
 •	Made absent and delete employee functionality in app.py file.
