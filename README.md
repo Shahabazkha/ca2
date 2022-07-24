@@ -19,7 +19,7 @@ ShahabazKhan Pathan (Student ID: 10607065)
 •	Made database connection and admin table under emp database.
 •	Done ajax implementation in search employee and attendance page.
 •	Cooperated in each and everytask some topics were needing a lot of researched. Researched for solutions.
-.       Implemented JS file and used bootstrap framework,SCSS for webpage designing.
+• Implemented JS file and used bootstrap framework,SCSS for webpage designing.
 
 Challenges faced
 Ajax implementation with flask it was very new concept for us.
@@ -29,7 +29,7 @@ Ajam Shaikh  (Student ID: 10612185)
 •	Created update function and made tables in database.
 •	Added background images using jquery.
 •	Made delete function in employee list to remove employee.
-.       Created html and css pages for add, update and delete employees.
+• Created html and css pages for add, update and delete employees.
 
 
 Vivekanand Gore  (Student ID: 10612192)
@@ -38,7 +38,9 @@ Vivekanand Gore  (Student ID: 10612192)
 •	Made absent and delete employee functionality in app.py file.
 •	Implemented functions using flask framework and added template rendering for html pages.
 •	Fetch search data for employees and written function for same in app.py.
-.       Created html, css pages for search, list employees.
+• Created html, css pages for search, list employees.
+
+We have build all the code from scratch written in this file and other files like HTML, CSS & JS.
 
 All over challanges we have faced was connecting jquery and ajax implementation. Update employee information was very tough to update.
 
