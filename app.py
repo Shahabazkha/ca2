@@ -1,3 +1,4 @@
+#We have build all the code from scratch written in this file and other files like HTML, CSS & JS.
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 from datetime import date
